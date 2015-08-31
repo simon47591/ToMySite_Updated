@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>YourWebPro 2-My-Site</title>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.js"></script>  
+        <script type="text/javascript" src="js/camera.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body>
+        <div class="app">
+        
+        
+<!-- =========================================
+        Start of home page: #home
+     ========================================= -->
+<div data-role="page" class="page" id="home">
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content" >
+        <a href="#submitPhotos" class="navlink" id="btn-photos">Submit Photo(s)<span></span></a>
+        <a href="#submitVideos" class="navlink" id="btn-videos">Submit Video(s)<span></span></a>
+        <a href="#submitTestimonials" class="navlink" id="btn-testimonials">Submit Testimonial(s)<span></span></a>
+        <a href="#settings" class="navlink" id="btn-settings">Profile Settings<span></span></a>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page home -->
+
+
+
+<!-- =========================================
+        Start of submitPhotos page: #submitPhotos
+     ========================================= -->
+<div data-role="page" id="submitPhotos" class="page">
+
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    <a href="#home" class="btn-back"></a>
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content" >	
+        <a href="#aa" class="navlink" id="btn-take-photos" onclick="capturePhoto();">Take a photo<span></span></a>
+        <a href="#aa" class="navlink" id="btn-from-gallery" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Gallery<span></span></a>
+        <!--<a href="#aa" class="navlink" id="btn-before-and-after">Before & After<span></span></a>-->
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page submitPhotos -->
+
+
+
+<!-- =========================================
+        Start of submitPhotos page: #submitPhotos
+     ========================================= -->
+<div data-role="page" id="previewPhotos" class="page">
+
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    <a href="#submitPhotos" class="btn-back" id="backBtn-Capture"></a>
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content" >	
+        <div id="imgPlaceholder">
+        
+        </div>
+        <textarea id="textValVideo" placeholder="Please provide a short description of this video: testimonial, roof repair, window installation"></textarea>
+        <!--<div id="form-submitPhoto-trap-wrap"></div>-->
+        <div id="form-submitPhoto-trap"></div>
+        <div class="imagesToUpload-btn-wrap">
+            <a id="addFromGallery" href="#aa" class="navlinkMini" onclick="">Add more<font class="mediaType">Photos</font> From Gallery</a>
+            <a id="addFromCamera" href="#aa" class="navlinkMini" onclick="">Add more<font class="mediaType">Photos</font> From Camera</a>
+            <a href="#aa" class="navlinkMini submit-btn" id="submitPhotoBtn">Submit</a>
+        </div>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page submitPhotos -->
+
+
+<!-- =========================================
+        Start of submitVideos page: #submitVideos
+     ========================================= -->
+<div data-role="page" id="submitVideos" class="page">
+
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    <a href="#home" class="btn-back"></a>
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content" >	
+        <!--<a href="#previewPhotos" class="navlink" id="btn-take-video" onclick="captureVideo();">Take a Video<span></span></a>-->
+        <a href="#previewPhotos" class="navlink" id="btn-video-from-gallery" onclick="getVideo(pictureSource.PHOTOLIBRARY);">From Gallery<span></span></a>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page submitVideos -->
+
+
+
+<!-- =========================================
+        Start of submitTestimonials page: #submitTestimonials
+     ========================================= -->
+<div data-role="page" id="submitTestimonials" class="page">
+
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    <a href="#home" class="btn-back"></a>
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content" >	
+       <div class="pageTitle">Submit Testimonial</div>
+          <form>
+              Enter testimonial below
+              <textarea placeholder="Enter Testimonial Here" id="form-testimonial-testimonial"></textarea>
+              <input type="text" placeholder="Client Name" id="form-testimonial-clientname">
+              <input type="text" placeholder="Date" id="form-testimonial-date">
+              <div class="btn-submit" id="sendTestimonial">Send</div>
+          </form>
+        <div class="content-description">Note: "Client Name" & "Date" are not required, only recommended.</div>
+        <div id="form-submitTest-trap-wrap"></div>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page submitTestimonials -->
+
+
+
+<!-- =========================================
+        Start of settings page: #settings
+     ========================================= -->
+<div data-role="page" id="settings" class="page">
+    <!-- Header -->
+	<div class="header" data-role="header">
+		<img src="img/logo.png" width="203" height="129" alt=""/>
+	</div>
+	<!-- Description -->
+    <div class="description">
+    <a href="#home" class="btn-back"></a>
+    	Powered by YourWebPro
+    </div>
+    <!-- Content -->
+	<div class="content">	
+    <div class="pageTitle">Settings</div>
+          <form>
+              Enter your information below
+              <input type="text" placeholder="Full Name" id="form-settings-fullname">
+              <input type="text" placeholder="Business Name" id="form-settings-businessname">
+              <input type="text" placeholder="eMail" id="form-settings-email">
+              <input type="text" placeholder="Domain Name" id="form-settings-domainname">
+              <div class="btn-submit" id="settingsSave">Save</div>
+          </form>
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright &copy; 2015 WebProPartners, Inc. All rights reserved.
+	</div>
+    
+</div>
+<!-- /page settings -->
+
+
+
+
+
+
+
+
+
+<!-- Start of third page: #settingsEmpty -->
+<div class="popup-wrap" id="settingsEmpty">
+<div class="popup">
+
+<!--<div id="settingsEmptys" style="position:absolute;z-index:100000;top:50px;">-->
+	<div class="popup-header">
+		Settings
+	</div><!-- /header -->
+
+	<div class="content">	
+          <form>
+              Enter your information below and click 'Save'
+              <input type="text" placeholder="Full Name" id="popup-settings-fullname">
+              <input type="text" placeholder="Business Name" id="popup-settings-businessname">
+              <input type="text" placeholder="eMail" id="popup-settings-email">
+              <input type="text" placeholder="Domain Name" id="popup-settings-domainname">
+              <div class="btn-submit" id="settingsEmptySave">Save</div>
+          </form>	
+	</div><!-- /content -->
+	
+	<div class="popupFooter">
+    <div class="emailError"><font class="popupError">Error:</font> Please enter a valid email address</div>
+	</div><!-- /footer -->
+    </div>
+</div><!-- /popup settingsEmpty -->
+            
+            
+            
+            
+
+
+
+
+<!-- Start of third page: #settingsEmpty -->
+<div class="popup-wrap" id="photoDetails">
+<div class="popup">
+
+<!--<div id="settingsEmptys" style="position:absolute;z-index:100000;top:50px;">-->
+	<div class="popup-header">
+    <div class="closePopup"></div>
+		Photo Details
+	</div><!-- /header -->
+
+	<div class="content">	
+    <div id="imgPlaceHolderForDetails"><img src="" style="max-width:100%;max-height:150px;"></div>
+    <select id="photoDetails-context">
+    <option value="empty">Select Photo Category</option>
+    <option value="Roofing">Roofing</option>
+    <option value="Siding">Siding</option>
+    <option value="Gutters">Gutters</option>
+    <option value="Windows">Windows</option>
+    <option value="Other">Other</option>
+    </select>
+    <input type="text" placeholder="Concrete, Fascia, Soffit, etc.." id="photoDetails-other">
+    <textarea placeholder="Picture Description/Instructions" id="photoDetails-comments"></textarea>
+
+    <div class="btn-submit" id="photoDetails-continueBtn">Next</div>
+
+	</div><!-- /content -->
+	
+	<div class="popupFooter">
+    <div class="emailError" id="photoDetails-emailError"><font class="popupError">Error:</font> <font id="photoDetails-emailError-text"></font></div>
+	</div><!-- /footer -->
+    </div>
+</div><!-- /popup settingsEmpty -->
+
+
+
+
+
+
+
+
+
+
+<!-- Photo Success Popup -->
+<div class="popup-wrap" id="photoSucess">
+<div class="popup" style="width:100%;">
+
+	<div class="popup-header">
+    <div class="closePopup"></div>
+		Success!
+	</div><!-- /header -->
+
+	<div class="content" style="padding-top:30px;padding-bottom:30px;font-size:19px;">	
+        <img src="img/checkmark.png" width="40" style="vertical-align:middle;"/> Your <font class="mediaType">photo(s)</font> have been sent.
+	</div><!-- /content -->
+	
+	<div class="popupFooter">
+    <div class="emailError" id="photoDetails-emailError"><font class="popupError">Error:</font> <font id="photoDetails-emailError-text"></font></div>
+	</div> <!--/footer -->
+    </div>
+</div><!-- /popup Photo Success -->
+
+
+
+
+
+
+
+
+
+<!-- Photo uploading Popup -->
+<div class="popup-wrap" id="photoUploading">
+<div class="popup" style="width:100%;">
+
+	<div class="popup-header">
+		Please Wait
+	</div><!-- /header -->
+
+	<div class="content" style="padding-top:30px;padding-bottom:30px;font-size:19px;">	
+        <img src="img/checkmark.png" width="40" style="vertical-align:middle;"/> Your file(s) are being uploaded, this could take up to 5 minutes.
+	</div><!-- /content -->
+	
+	<div class="popupFooter">
+    <div class="emailError" id="photoDetails-emailError"><font class="popupError">Error:</font> <font id="photoDetails-emailError-text"></font></div>
+	</div> <!--/footer -->
+    </div>
+
+</div><!-- /popup Photo uploading -->
+
+
+
+    
+    
+
+        </div>
+        
+        
+  <div id="myimage"></div>
+  <div id="api"></div>     
+    
+    
+ <div class="opac-BG"></div>   
+    </body>
+</html>
